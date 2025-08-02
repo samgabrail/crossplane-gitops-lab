@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: staging
+---
+apiVersion: platform.tekanaid.com/v1alpha1
+kind: BucketClaim
+metadata:
+  name: staging-storage
+  namespace: staging
+spec:
+  bucketName: "myapp-staging-storage"
+  environment: "staging"
+  tier: "standard"
+  writeConnectionSecretsToNamespace: "staging"
